@@ -1,14 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.patino_eick_javafx_crud_guia.JugadorController"
+            prefWidth="1000"
+            prefHeight="620"
+            style="-fx-background-color: #f4f6f8;">
 
-</AnchorPane>
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              style="-fx-background-color: #1a1a2e;">
+            <padding>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </padding>
+
+            <Label text="⚽ Gestión de Jugadores"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- FORMULARIO -->
+    <left>
+        <VBox spacing="10"
+              prefWidth="320"
+              style="-fx-padding:15; -fx-background-color:white;">
+
+            <Label text="Formulario Jugador"
+                   style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+
+            <Separator/>
+
+            <Label text="Cédula"/>
+            <TextField fx:id="txtCedula"/>
+
+            <Label text="Nombre"/>
+            <TextField fx:id="txtNombre"/>
+
+            <Label text="Apellido"/>
+            <TextField fx:id="txtApellido"/>
+
+            <Label text="Edad"/>
+            <TextField fx:id="txtEdad"/>
+
+            <Label text="Correo"/>
+            <TextField fx:id="txtCorreo"/>
+
+            <Label text="Posición"/>
+            <ComboBox fx:id="cbPosicion"/>
+
+            <Label text="Pierna hábil"/>
+            <ComboBox fx:id="cbPiernaHabil"/>
+
+            <Label text="Equipo"/>
+            <ComboBox fx:id="cbEquipo"/>
+
+            <Label text="Observaciones"/>
+            <TextArea fx:id="txtObservaciones"
+                      prefRowCount="3"/>
+
+            <Separator/>
+
+            <HBox spacing="10">
+
+                <Button text="💾 Guardar"
+                        onAction="#guardar"
+                        maxWidth="Infinity"
+                        HBox.hgrow="ALWAYS"
+                        style="-fx-background-color:#2196F3; -fx-text-fill:white;"/>
+
+                <Button text="🆕 Nuevo"
+                        onAction="#nuevo"
+                        maxWidth="Infinity"
+                        HBox.hgrow="ALWAYS"
+                        style="-fx-background-color:#4CAF50; -fx-text-fill:white;"/>
+
+            </HBox>
+
+            <Button text="🗑 Eliminar"
+                    onAction="#eliminar"
+                    maxWidth="Infinity"
+                    style="-fx-background-color:#f44336; -fx-text-fill:white;"/>
+
+        </VBox>
+    </left>
+
+    <!-- TABLA -->
+    <center>
+        <VBox spacing="10"
+              style="-fx-padding:10;">
+
+            <Label text="Lista de Jugadores"
+                   style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+
+            <TableView fx:id="tabla"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="colId"
+                                 text="ID"
+                                 prefWidth="50"/>
+
+                    <TableColumn fx:id="colCedula"
+                                 text="Cédula"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="colNombre"
+                                 text="Nombre"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colApellido"
+                                 text="Apellido"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colEdad"
+                                 text="Edad"
+                                 prefWidth="60"/>
+
+                    <TableColumn fx:id="colCorreo"
+                                 text="Correo"
+                                 prefWidth="180"/>
+
+                    <TableColumn fx:id="colPosicion"
+                                 text="Posición"
+                                 prefWidth="120"/>
+
+                    <TableColumn fx:id="colPiernaHabil"
+                                 text="Pierna hábil"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="colEquipo"
+                                 text="Equipo"
+                                 prefWidth="150"/>
+
+                </columns>
+
+                <placeholder>
+                    <Label text="No hay jugadores registrados"/>
+                </placeholder>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>
