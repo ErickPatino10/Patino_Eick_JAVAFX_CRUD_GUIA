@@ -13,10 +13,9 @@ public class Jugador {
     private String equipo;
     private String observaciones;
 
-    public Jugador() {
-    }
-
-    public Jugador(int id, String cedula, String nombre, String apellido, int edad, String correo, String posicion, String piernaHabil, String equipo, String observaciones) {
+    public Jugador(int id, String cedula, String nombre, String apellido,
+                   int edad, String correo, String posicion,
+                   String piernaHabil, String equipo, String observaciones) {
 
         this.id = id;
         this.cedula = cedula;
@@ -30,80 +29,83 @@ public class Jugador {
         this.observaciones = observaciones;
     }
 
-    public int getId() {
-        return id;
+    public Jugador() {
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return id;
     }
 
     public String getCedula() {
         return cedula;
     }
 
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public int getEdad() {
         return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
     }
 
     public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
     public String getPosicion() {
         return posicion;
-    }
-
-    public void setPosicion(String posicion) {
-        this.posicion = posicion;
     }
 
     public String getPiernaHabil() {
         return piernaHabil;
     }
 
-    public void setPiernaHabil(String piernaHabil) {
-        this.piernaHabil = piernaHabil;
-    }
-
     public String getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(String equipo) {
-        this.equipo = equipo;
-    }
-
     public String getObservaciones() {
         return observaciones;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setPosicion(String posicion) {
+        this.posicion = posicion;
+    }
+
+    public void setPiernaHabil(String piernaHabil) {
+        this.piernaHabil = piernaHabil;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
     }
 
     public void setObservaciones(String observaciones) {
